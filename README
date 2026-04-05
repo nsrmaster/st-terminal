@@ -32,3 +32,9 @@ Credits
 -------
 Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
 
+Patches
+-------
+st-alpha-20240814-a0274bc.diff
+st-anygeometry-0.8.1.diff
+st-anysize-20220718-baa9357.diff
+st-boxdraw_v2-0.8.5.diff
