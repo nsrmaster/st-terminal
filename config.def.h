@@ -1,11 +1,15 @@
 /* See LICENSE file for copyright and license details. */
 
+/* theme management */
+# include "theme_beg.h" /* this is a compile-time generated header file */
+# include "theme.h"
+
 /*
  * appearance
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = ST_FONT;
 static int borderpx = 2;
 
 /*
@@ -93,36 +97,42 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
+/* bg opacity */
+float alpha = ST_ALPHA;
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	ST_COLOR0,
+	ST_COLOR1,
+	ST_COLOR2,
+	ST_COLOR3,
+	ST_COLOR4,
+	ST_COLOR5,
+	ST_COLOR6,
+	ST_COLOR7,
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	ST_COLOR8,
+	ST_COLOR9,
+	ST_COLOR10,
+	ST_COLOR11,
+	ST_COLOR12,
+	ST_COLOR13,
+	ST_COLOR14,
+	ST_COLOR15,
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+	ST_CURSORCOLOR,
+	ST_REVCURCOLOR,
+	ST_FOREGROUND, /* default foreground colour */
+	ST_BACKGROUND, /* default background colour */
 };
+
+/* theme management */
+# include "theme_end.h" /* this is a compile-time generated header file */
 
 
 /*
